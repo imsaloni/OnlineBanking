@@ -3,10 +3,20 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Createdregister : DbMigration
+    public partial class acount : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.AccountDetails",
+                c => new
+                    {
+                        AccountNumber = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
+                        Amount = c.Int(nullable: false,defaultValue:500),
+                    })
+                .PrimaryKey(t => t.AccountNumber);
+            
             CreateTable(
                 "dbo.Users",
                 c => new
@@ -32,6 +42,7 @@
         public override void Down()
         {
             DropTable("dbo.Users");
+            DropTable("dbo.AccountDetails");
         }
     }
 }

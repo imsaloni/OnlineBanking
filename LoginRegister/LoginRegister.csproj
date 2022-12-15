@@ -140,17 +140,29 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212130917348_Created register.cs" />
-    <Compile Include="Migrations\202212130917348_Created register.designer.cs">
-      <DependentUpon>202212130917348_Created register.cs</DependentUpon>
+    <Compile Include="Migrations\202212140707378_acount.cs" />
+    <Compile Include="Migrations\202212140707378_acount.designer.cs">
+      <DependentUpon>202212140707378_acount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212140928177_update.cs" />
+    <Compile Include="Migrations\202212140928177_update.designer.cs">
+      <DependentUpon>202212140928177_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212151013219_admin part.cs" />
+    <Compile Include="Migrations\202212151013219_admin part.designer.cs">
+      <DependentUpon>202212151013219_admin part.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountDetails.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DB_Entities.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +205,17 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Home\Logout.cshtml" />
+    <Content Include="Views\Home\AccountDetails.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,8 +234,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212130917348_Created register.resx">
-      <DependentUpon>202212130917348_Created register.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212140707378_acount.resx">
+      <DependentUpon>202212140707378_acount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212140928177_update.resx">
+      <DependentUpon>202212140928177_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212151013219_admin part.resx">
+      <DependentUpon>202212151013219_admin part.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

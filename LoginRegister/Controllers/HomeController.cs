@@ -7,12 +7,17 @@ using System.Web.Mvc;
 using static System.Collections.Specialized.BitVector32;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace LoginRegister.Controllers
 {
     public class HomeController : Controller
     {
         private DB_Entities _db = new DB_Entities();
+        private object rdr;
+
         // GET: Home
         public ActionResult Index()
         {
@@ -26,9 +31,30 @@ namespace LoginRegister.Controllers
             }
         }
 
-        //Dashboard
 
-        public ActionResult Dashboard()
+        protected string GetConnectionString()
+        {
+            var datasource = @"Saloni";//your server
+            var database = "DatabaseMVC5"; //your database name
+           
+            string connString = @"Data Source=" + datasource + ";Initial Catalog="
+                        + database + ";Persist Security Info=True;User ID=" + ";Password=" ;
+
+            return connString;
+        }
+        //AccountDetails
+        public ActionResult AccountDetails()
+        {
+            return View();
+        }
+            
+
+
+
+    
+    //Dashboard
+
+    public ActionResult Dashboard()
         {
             return View();
         }
@@ -39,6 +65,8 @@ namespace LoginRegister.Controllers
         {
             return View();
         }
+
+        
 
         //POST: Register
         [HttpPost]
@@ -128,7 +156,8 @@ namespace LoginRegister.Controllers
             return byte2String;
         }
 
-    }
+
+        }
 }
 
           

@@ -10,9 +10,10 @@ namespace LoginRegister.Models
 {
     public class DB_Entities: DbContext
     {
-        #region srijan
+        #region group4
         public DB_Entities() : base("DatabaseMVC5") { }
-        public DbSet<User> Users { get; set; }
+       
+        public DbSet<AccountDetails>AccountDetails { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //Database.SetInitializer<demoEntities>(null);
@@ -20,9 +21,10 @@ namespace LoginRegister.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             base.OnModelCreating(modelBuilder);
-
-
         }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         #endregion
     }
 }
