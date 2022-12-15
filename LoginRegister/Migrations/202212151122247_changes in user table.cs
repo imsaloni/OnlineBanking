@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class acount : DbMigration
+    public partial class changesinusertable : DbMigration
     {
         public override void Up()
         {
@@ -13,9 +13,19 @@
                     {
                         AccountNumber = c.Int(nullable: false, identity: true),
                         UserId = c.Int(nullable: false),
-                        Amount = c.Int(nullable: false,defaultValue:500),
+                        Amount = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AccountNumber);
+            
+            CreateTable(
+                "dbo.Admin",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        AdminId = c.Int(nullable: false),
+                        Password = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Users",
@@ -34,6 +44,7 @@
                         Occupation = c.String(nullable: false),
                         AnnualIncome = c.String(nullable: false),
                         Password = c.String(nullable: false, maxLength: 50),
+                        userstatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.UserId);
             
@@ -42,6 +53,7 @@
         public override void Down()
         {
             DropTable("dbo.Users");
+            DropTable("dbo.Admin");
             DropTable("dbo.AccountDetails");
         }
     }

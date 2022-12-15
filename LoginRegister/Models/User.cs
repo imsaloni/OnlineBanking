@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 
 namespace LoginRegister.Models
 {
@@ -79,6 +80,8 @@ namespace LoginRegister.Models
         [Required]
         [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string ConfirmPassword { get; set; }
+        [DefaultValue(0)]
+        public int userstatus { get; set; }
         public string FullName()
         {
             return this.FirstName + " " + this.LastName;

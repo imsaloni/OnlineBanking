@@ -145,17 +145,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212140707378_acount.cs" />
-    <Compile Include="Migrations\202212140707378_acount.designer.cs">
-      <DependentUpon>202212140707378_acount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212140928177_update.cs" />
-    <Compile Include="Migrations\202212140928177_update.designer.cs">
-      <DependentUpon>202212140928177_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212151013219_admin part.cs" />
-    <Compile Include="Migrations\202212151013219_admin part.designer.cs">
-      <DependentUpon>202212151013219_admin part.cs</DependentUpon>
+    <Compile Include="Migrations\202212151122247_changes in user table.cs" />
+    <Compile Include="Migrations\202212151122247_changes in user table.designer.cs">
+      <DependentUpon>202212151122247_changes in user table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDetails.cs" />
@@ -234,14 +226,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212140707378_acount.resx">
-      <DependentUpon>202212140707378_acount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212140928177_update.resx">
-      <DependentUpon>202212140928177_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212151013219_admin part.resx">
-      <DependentUpon>202212151013219_admin part.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212151122247_changes in user table.resx">
+      <DependentUpon>202212151122247_changes in user table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
