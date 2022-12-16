@@ -80,7 +80,7 @@ namespace LoginRegister.Models
         [Required]
         [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string ConfirmPassword { get; set; }
-        [DefaultValue(0)]
+       
         public int userstatus { get; set; }
         public string FullName()
         {

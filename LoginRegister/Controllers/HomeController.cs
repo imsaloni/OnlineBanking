@@ -10,6 +10,8 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Configuration;
 
 namespace LoginRegister.Controllers
 {
@@ -17,7 +19,8 @@ namespace LoginRegister.Controllers
     {
         private DB_Entities _db = new DB_Entities();
         private object rdr;
-
+        
+        
         // GET: Home
         public ActionResult Index()
         {
@@ -45,10 +48,10 @@ namespace LoginRegister.Controllers
         //AccountDetails
         public ActionResult AccountDetails()
         {
+
             return View();
         }
-            
-
+        
 
 
     
@@ -156,8 +159,34 @@ namespace LoginRegister.Controllers
             return byte2String;
         }
 
-
+        public ActionResult AdminLogin()
+        {
+            return View();
         }
+        [HttpPost]
+
+        public ActionResult AdminLogin(Admin login)
+        {
+            if (ModelState.IsValid)
+            {
+                var lg = _db.Admins.Where(m => m.AdminId == login.AdminId && m.Password == login.Password).SingleOrDefault();
+                if (lg != null)
+                {
+                    Session["AdminId"] = login.AdminId;
+                    Session["password"] = login.Password;
+
+                    return RedirectToAction("Admin");
+                }
+                else
+                {
+                    ViewBag.msg = "Invalid Adminid or Password";
+                }
+            }
+            return View();
+        }
+
+
+    }
 }
 
           
